@@ -2,6 +2,7 @@ name: Deploy privacy pages
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 permissions:
   contents: read
   pages: write
@@ -20,6 +21,6 @@ jobs:
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: '.'
       - id: deployment
         uses: actions/deploy-pages@v4
